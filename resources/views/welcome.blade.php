@@ -27,7 +27,7 @@
 
 <body>
     <!-- Topbar Start -->
-    <x-top-bar/>
+    <x-top-bar />
     <!-- Topbar End -->
 
 
@@ -35,7 +35,7 @@
     <div class="container-fluid pt-3">
         <nav class="navbar navbar-expand-lg bg-light navbar-light py-2 py-lg-0 px-lg-5">
             <a href="" class="navbar-brand d-block d-lg-none">
-                <h1 class="m-0 display-5 text-uppercase"><span class="text-primary">News</span>Room</h1>
+                <h1 class="m-0 display-5 text-uppercase"><span class="text-primary">JOB</span>SITE</h1>
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -44,7 +44,6 @@
                 <div class="navbar-nav mr-auto py-0">
                     <a href="index.html" class="nav-item nav-link active">Home</a>
                     <a href="category.html" class="nav-item nav-link">Categories</a>
-                    <a href="single.html" class="nav-item nav-link">Single News</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dropdown</a>
                         <div class="dropdown-menu rounded-0 m-0">
@@ -170,13 +169,12 @@
     <!-- Featured News Slider Start -->
     <div class="container-fluid py-3">
         <div class="container">
-            <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
-                <h3 class="m-0">Featured</h3>
+            <div class="d-flex align-items-center justify-content-between py-2 px-4 mb-3">
+                <h3 class="m-0">Apply Now</h3>
                 <a class="text-secondary font-weight-medium text-decoration-none" href="">View All</a>
             </div>
-            <div class="owl-carousel owl-carousel-2 carousel-item-4 position-relative">
-                <div class="position-relative overflow-hidden" style="height: 300px;">
-                    <img class="img-fluid w-100 h-100" src="img/news-300x300-1.jpg" style="object-fit: cover;">
+            <div class="position-relative">
+                {{-- <div class="position-relative overflow-hidden">
                     <div class="overlay">
                         <div class="mb-1" style="font-size: 13px;">
                             <a class="text-white" href="">Technology</a>
@@ -185,60 +183,27 @@
                         </div>
                         <a class="h4 m-0 text-white" href="">Sanctus amet sed ipsum lorem</a>
                     </div>
-                </div>
-                <div class="position-relative overflow-hidden" style="height: 300px;">
-                    <img class="img-fluid w-100 h-100" src="img/news-300x300-2.jpg" style="object-fit: cover;">
-                    <div class="overlay">
-                        <div class="mb-1" style="font-size: 13px;">
-                            <a class="text-white" href="">Technology</a>
-                            <span class="px-1 text-white">/</span>
-                            <a class="text-white" href="">January 01, 2045</a>
+                </div> --}}
+                @for($i = 0; $i < 10; $i++) 
+                <div class="position-relative overflow-hidden py-1" style="height: 100px;">
+                    {{-- <img class="img-fluid w-100 h-100" src="img/news-300x300-5.jpg" style="object-fit: cover;"> --}}
+                    <button class="overlay text-center" href="#">
+                        <div style="font-size: 14px;">
+                            <p class="text-white">Sanctus amet sed ipsum lorem</p>
                         </div>
-                        <a class="h4 m-0 text-white" href="">Sanctus amet sed ipsum lorem</a>
-                    </div>
+                        <a class="h4 m-0 text-white">Sanctus amet sed ipsum lorem</a>
+                    </button>
                 </div>
-                <div class="position-relative overflow-hidden" style="height: 300px;">
-                    <img class="img-fluid w-100 h-100" src="img/news-300x300-3.jpg" style="object-fit: cover;">
-                    <div class="overlay">
-                        <div class="mb-1" style="font-size: 13px;">
-                            <a class="text-white" href="">Technology</a>
-                            <span class="px-1 text-white">/</span>
-                            <a class="text-white" href="">January 01, 2045</a>
-                        </div>
-                        <a class="h4 m-0 text-white" href="">Sanctus amet sed ipsum lorem</a>
-                    </div>
-                </div>
-                <div class="position-relative overflow-hidden" style="height: 300px;">
-                    <img class="img-fluid w-100 h-100" src="img/news-300x300-4.jpg" style="object-fit: cover;">
-                    <div class="overlay">
-                        <div class="mb-1" style="font-size: 13px;">
-                            <a class="text-white" href="">Technology</a>
-                            <span class="px-1 text-white">/</span>
-                            <a class="text-white" href="">January 01, 2045</a>
-                        </div>
-                        <a class="h4 m-0 text-white" href="">Sanctus amet sed ipsum lorem</a>
-                    </div>
-                </div>
-                <div class="position-relative overflow-hidden" style="height: 300px;">
-                    <img class="img-fluid w-100 h-100" src="img/news-300x300-5.jpg" style="object-fit: cover;">
-                    <div class="overlay">
-                        <div class="mb-1" style="font-size: 13px;">
-                            <a class="text-white" href="">Technology</a>
-                            <span class="px-1 text-white">/</span>
-                            <a class="text-white" href="">January 01, 2045</a>
-                        </div>
-                        <a class="h4 m-0 text-white" href="">Sanctus amet sed ipsum lorem</a>
-                    </div>
-                </div>
-            </div>
+                @endfor
         </div>
+    </div>
     </div>
     </div>
     <!-- Featured News Slider End -->
 
 
     <!-- Category News Slider Start -->
-    <div class="container-fluid">
+    {{-- <div class="container-fluid">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 py-3">
@@ -809,7 +774,7 @@
             <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
             Designed by <a class="font-weight-bold" href="https://htmlcodex.com">HTML Codex</a>
         </p>
-    </div>
+    </div> --}}
     <!-- Footer End -->
 
 
