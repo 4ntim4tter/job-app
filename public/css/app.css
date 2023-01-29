@@ -10740,22 +10740,27 @@ h6,
     width: 100%;
     height: 100%;
     padding: 20px;
-    bottom: 10;
-    left: 0;
+    bottom: 10px;
+    /* left: 15; */
     display: flex;
     flex-direction: column;
-    align-items: left;
-    justify-content: flex-end;
+    /* align-items: left; */
+    /* justify-content: flex-end; */
     background-color: #383d41;
-    z-index: 1;
+    /* z-index: 1; */
     -moz-transition: all .2s ease-in;
     -o-transition: all .2s ease-in;
     -webkit-transition: all .2s ease-in;
     transition: all .2s ease-in;
+    border-style: solid; 
+    border-color: red;
+
 }
 
 .overlay:hover {
-    background-color: red;
+    background-color: #721c24;
+    border-color: #383d41;
+
 }
 
 .page-header {

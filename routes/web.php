@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\JobsController;
+use App\Http\Controllers\ShowJobController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('index');
+Route::get('/', JobsController::class)->name('jobs.home');
+Route::get('/job/{job}', [ShowJobController::class, 'showJob'])->name('jobs.show');

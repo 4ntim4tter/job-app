@@ -1,0 +1,3 @@
+<div>
+    {{ $job->name }}
+</div>
