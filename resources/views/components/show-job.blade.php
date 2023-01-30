@@ -19,25 +19,26 @@
                             <div class="form-row">
                                 <div class="col-md-6">
                                     <div class="control-group">
-                                        <input type="text" class="form-control p-4" id="name" placeholder="Full Name" required="required" data-validation-required-message="Please enter your name" />
+                                        <input type="text" class="form-control p-4" id="name" name="name" placeholder="Full Name" required="required" value="{{ old('name') }}" data-validation-required-message="Please enter your name" />
                                         <p class="help-block text-danger"></p>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="control-group">
-                                        <input type="email" class="form-control p-4" id="email" placeholder="Email" required="required" data-validation-required-message="Please enter your email" />
+                                        <input type="email" class="form-control p-4" id="email" name="email" placeholder="Email" required="required" value="{{ old('email') }}" data-validation-required-message="Please enter your email" />
                                         <p class="help-block text-danger"></p>
                                     </div>
                                 </div>
                             </div>
                             <div class="control-group">
-                                <input type="file" class="form-control p-4" id="cv" placeholder="CV" required="required" data-validation-required-message="Please upload your CV" />
+                                <textarea class="form-control" rows="5" id="qualifications" name="qualifications" placeholder="Qualifications" required="required"  value="{{ old('qualifications') }}" data-validation-required-message="Please enter your qualifications"></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
-                            <div class="control-group">
-                                <textarea class="form-control" rows="5" id="qualifications" placeholder="Qualifications" required="required" data-validation-required-message="Please enter your qualifications"></textarea>
-                                <p class="help-block text-danger"></p>
+                            <div>
+                                <label for="cv">Please upload your CV:</label>
                             </div>
+                                <input type="file" class="hidden" id="file" name="file" required="required" value="{{ old('file') }}" data-validation-required-message="Please upload your CV" />
+                                <p class="help-block text-danger"></p>
                             <div>
                                 <button class="btn btn-primary font-weight-semi-bold px-4" style="height: 50px;" type="submit" id="sendMessageButton">Apply</button>
                                 <a class="btn btn-primary font-weight-semi-bold px-4" style="height: 50px; line-height: 35px; float:right;" id="goBackButton" href="{{ route('jobs.home') }}">

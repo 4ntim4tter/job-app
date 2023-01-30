@@ -24,7 +24,10 @@ class JobApplicationRequest extends FormRequest
     public function rules()
     {
         return [
-            
+            'name' => 'required',
+            'email' => 'required|email',
+            'qualifications' => 'nullable',
+            'file' => 'required|file'
         ];
     }
 }
