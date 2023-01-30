@@ -17,3 +17,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', JobsController::class)->name('jobs.home');
 Route::get('/job/{job}', [ShowJobController::class, 'showJob'])->name('jobs.show');
+Route::post('/job/*', [JobApplicationController::class, 'apply'])->name('jobs.apply');
