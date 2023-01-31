@@ -15,7 +15,7 @@
                 <div class="col-md-12">
                     <div class="contact-form bg-light mb-3" style="padding: 30px;">
                         <div id="success"></div>
-                        <x-form name="sentMessage" id="contactForm" action="{{ route('jobs.apply') }}" method="POST" enctype="multipart/form-data">
+                        <x-form name="sentMessage" id="contactForm" action="{{ route('jobs.apply', ['companyName' => $job->name]) }}" method="POST" enctype="multipart/form-data">
                             <div class="form-row">
                                 <div class="col-md-6">
                                     <div class="control-group">

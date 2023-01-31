@@ -16,7 +16,7 @@ class JobsController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $jobs = Jobs::all();
+        $jobs = Jobs::latest()->paginate(5);
         return view('welcome', compact('jobs'));
     }
 }

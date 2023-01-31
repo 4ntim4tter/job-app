@@ -13,3 +13,5 @@
 </div>
 <div style="padding:1px"></div>
 @endforeach
+
+{{ $jobs->links() }}
