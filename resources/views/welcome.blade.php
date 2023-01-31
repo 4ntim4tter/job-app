@@ -1,27 +1,25 @@
     <x-layout title="Jobs">
         <body>
-            <x-top-bar />
             <div class="container-fluid pt-3">
-                <nav class="navbar navbar-expand-lg bg-light navbar-light py-2 py-lg-0 px-lg-5">
-                    <a href="" class="navbar-brand d-block d-lg-none">
-                        <h1 class="m-0 display-5 text-uppercase"><span class="text-primary">JOB</span>SITE</h1>
-                    </a>
-                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
-                        <div class="navbar-nav mr-auto py-0">
-                            <a href="index.html" class="nav-item nav-link active">Home</a>
-                            <a href="category.html" class="nav-item nav-link">Categories</a>
+                <div class="navbar navbar-expand-lg bg-light navbar-light py-2 py-lg-0 px-lg-5">
+                    <h1 class="m-0 display-5 text-uppercase"><span class="text-primary">JOB</span>SITE </h1>
+                    <div class="navbar-collapse" id="navbarCollapse">
+                        <div class="ml-auto mr-auto" style="padding-left: 5px; padding-right: 5px;">
+                            <a href="{{ route('jobs.home') }}" class="nav-item nav-link topbarbutton selected-button">Home</a>
+                            <a href="#" class="nav-item nav-link topbarbutton">Categories</a>
                         </div>
-                        <div class="input-group ml-auto" style="width: 100%; max-width: 300px;">
-                            <input type="text" class="form-control" placeholder="Keyword">
-                            <div class="input-group-append">
-                                <button class="input-group-text text-secondary"><i class="fa fa-search"></i></button>
+                        <div class="ml-auto mr-auto">
+                            <input type="text" placeholder="Keyword" style="display: inline; height: 38px">
+                            <div class="input-group-append" style="display:inline">
+                                <button class="input-group-text" style="display:inline"><i class="fa fa-search" style="display: inline"></i></button>
                             </div>
                         </div>
+                        <div class="ml-auto mr-auto" style="padding-left: 5px; padding-right: 5px;">
+                            <a href="#" class="nav-item nav-link topbarbutton">Login</a>
+                            <a href="#" class="nav-item nav-link topbarbutton">Sign Up</a>
+                        </div>
                     </div>
-                </nav>
+                </div>
             </div>
 
             <div class="container-fluid py-3">
