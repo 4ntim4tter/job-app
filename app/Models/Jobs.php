@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Company;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Jobs extends Model
 {
@@ -14,5 +15,10 @@ class Jobs extends Model
     public function jobRoute()
     {
         return route('jobs.show', $this);
+    }
+
+    public function company()
+    {
+        return $this->hasOne(Company::class);
     }
 }

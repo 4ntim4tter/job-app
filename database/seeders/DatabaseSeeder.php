@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Company;
 use App\Models\Jobs;
 use Illuminate\Database\Seeder;
 
@@ -16,8 +17,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=0; $i < 10; $i++) { 
-            Jobs::factory()->create();
-        }
+        Company::factory(10)->has(Jobs::factory(5))->create();
     }
 }

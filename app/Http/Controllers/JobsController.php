@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
 use App\Models\Jobs;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class JobsController extends Controller
 {
@@ -17,6 +17,7 @@ class JobsController extends Controller
     public function __invoke(Request $request)
     {
         $jobs = Jobs::latest()->paginate(5);
-        return view('welcome', compact('jobs'));
+        $companies = Company::all();
+        return view('welcome', compact('jobs', 'companies'));
     }
 }

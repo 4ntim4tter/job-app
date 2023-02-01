@@ -44,7 +44,7 @@
                                 <a class="h4 m-0 text-white" href="">Sanctus amet sed ipsum lorem</a>
                             </div>
                         </div>
-                        <x-job-post :jobs=$jobs />
+                        <x-job-post :jobs=$jobs :companies=$companies/>
                     </div>
                 </div>
             </div>
