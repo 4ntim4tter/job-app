@@ -3,7 +3,7 @@
     <div class="container-fluid py-3">
         <div class="container">
             <div class="bg-light py-2 px-4 mb-3">
-                <h4 class="m-1">Company {{ $job->name }} is looking for {{ $job->category }}</h4>
+                <h4 class="m-1">Company {{ $company }} is looking for a {{ $job->category }}!</h4>
             </div>
             <div class="bg-light py-2 px-4 mb-3">
                 <b>Job description:</b>

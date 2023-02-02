@@ -6,8 +6,8 @@
             <a href="#" class="nav-item nav-link topbarbutton" style="display: inline; min-height: 100%;">Categories</a>
         </div>
         <div class="m-auto" style="padding-left: 5px; padding-right: 5px; height: 100%;">
-            <a href="#" class="nav-item nav-link topbarbutton " style="display: inline; height: 100%;">Login</a>
-            <a href="#" class="nav-item nav-link topbarbutton " style="display: inline; height: 100%;">Sign Up</a>
+            <a href="{{ route('login') }}" class="nav-item nav-link topbarbutton " style="display: inline; height: 100%;">Login</a>
+            <a href="{{ route('register') }}" class="nav-item nav-link topbarbutton " style="display: inline; height: 100%;">Sign Up</a>
         </div>
     </div>
 

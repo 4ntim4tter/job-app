@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Jobs;
+use App\Models\Company;
 use Illuminate\Http\Request;
 
 class ShowJobController extends Controller
 {
 
-    public function showJob(Jobs $job, Request $request)
+    public function showJob(Jobs $job, Company $company, Request $request)
     {
-        return view('components.show-job', compact('job'));
+        $company = $company->all();
+        $company = $company[$job->company_id]->name;
+        return view('components.show-job', compact('job', 'company'));
     }
 }

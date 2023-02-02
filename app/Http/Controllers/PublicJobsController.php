@@ -6,7 +6,7 @@ use App\Models\Company;
 use App\Models\Jobs;
 use Illuminate\Http\Request;
 
-class JobsController extends Controller
+class PublicJobsController extends Controller
 {
     /**
      * Handle the incoming request.

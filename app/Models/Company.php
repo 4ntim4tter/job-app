@@ -3,12 +3,13 @@
 namespace App\Models;
 
 use App\Models\Jobs;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Company extends Model
+class Company extends \Illuminate\Foundation\Auth\User
 {
     use HasFactory;
+
+    protected $table = 'companies';
 
     protected $fillable = [
         'name', 

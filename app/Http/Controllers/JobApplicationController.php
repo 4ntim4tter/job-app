@@ -18,6 +18,6 @@ class JobApplicationController extends Controller
         $jobApplication->filename = $request->file->store($cv->directory($request->query('companyName')));
         $jobApplication->save();
 
-        return redirect()->withInput()->route('jobs.home')->with('status', 'Applied successfuly.');
+        return redirect()->route('jobs.home')->with('status', 'Applied successfuly.');
     }
 }
