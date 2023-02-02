@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('category');
             $table->string('description');
-            $table->string('requirements');
+            $table->longText('requirements');
             $table->timestamps();
         });
     }

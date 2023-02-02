@@ -1,27 +1,11 @@
     <x-layout title="Jobs">
         <body>
-            <div class="container-fluid pt-3">
+            {{-- <div class="container-fluid pt-3">
                 <div class="navbar navbar-expand-lg bg-light navbar-light py-2 py-lg-0 px-lg-5">
-                    <h1 class="m-0 display-5 text-uppercase"><span class="text-primary">JOB</span>SITE </h1>
-                    <div class="navbar-collapse" id="navbarCollapse">
-                        <div class="ml-auto mr-auto" style="padding-left: 5px; padding-right: 5px;">
-                            <a href="{{ route('jobs.home') }}" class="nav-item nav-link topbarbutton selected-button">Home</a>
-                            <a href="#" class="nav-item nav-link topbarbutton">Categories</a>
-                        </div>
-                        <div class="ml-auto mr-auto">
-                            <input type="text" placeholder="Keyword" style="display: inline; height: 38px">
-                            <div class="input-group-append" style="display:inline">
-                                <button class="input-group-text" style="display:inline"><i class="fa fa-search" style="display: inline"></i></button>
-                            </div>
-                        </div>
-                        <div class="ml-auto mr-auto" style="padding-left: 5px; padding-right: 5px;">
-                            <a href="#" class="nav-item nav-link topbarbutton">Login</a>
-                            <a href="#" class="nav-item nav-link topbarbutton">Sign Up</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
+                </div>
+            </div> --}}
+            <x-top-bar/>
             <div class="container-fluid py-3">
                 <div class="container">
                     @if(session('status'))
@@ -31,7 +15,12 @@
                     @endif
                     <div class="d-flex align-items-center justify-content-between py-2 px-4 mb-3">
                         <h3 class="m-0">Apply Now</h3>
-                        <a class="text-secondary font-weight-medium text-decoration-none" href="">View All</a>
+                        <div class="ml-auto">
+                            <input type="text" placeholder="Keyword" style="display: inline; height: 37px">
+                            <div class="input-group-append" style="display:inline">
+                                <button class="input-group-text" style="display:inline"><i class="fa fa-search" style="display: inline"></i></button>
+                            </div>
+                        </div>
                     </div>
                     <div class="position-relative">
                         <div class="position-relative overflow-hidden">
