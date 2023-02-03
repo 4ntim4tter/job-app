@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CompanyController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicJobsController;
 use App\Http\Controllers\ShowJobController;
@@ -20,6 +21,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', PublicJobsController::class)->name('jobs.home');
 Route::get('/job/{job}', [ShowJobController::class, 'showJob'])->name('jobs.show');
 Route::post('/job', [JobApplicationController::class, 'apply'])->name('jobs.apply');
+Route::get('/dashboard', [CompanyController::class, 'index'])->name('jobs.dashboard')->middleware(['auth']);
 
 Auth::routes();
 Auth::routes();

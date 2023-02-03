@@ -1,10 +1,5 @@
     <x-layout title="Jobs">
         <body>
-            {{-- <div class="container-fluid pt-3">
-                <div class="navbar navbar-expand-lg bg-light navbar-light py-2 py-lg-0 px-lg-5">
-
-                </div>
-            </div> --}}
             <x-top-bar/>
             <div class="container-fluid py-3">
                 <div class="container">
@@ -40,8 +35,7 @@
             </div>
             <!-- Back to Top -->
             <a href="#" class="btn btn-dark back-to-top"><i class="fa fa-angle-up"></i></a>
-
-
+            
             <!-- JavaScript Libraries -->
             {{-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
