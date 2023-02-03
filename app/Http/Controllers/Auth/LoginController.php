@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Company;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -33,6 +35,17 @@ class LoginController extends Controller
      *
      * @return void
      */
+
+    protected function authenticated(Request $request)
+    {
+        session()->flash('status', 'Logged in successfuly.');
+    }
+
+    protected function loggedOut(Request $request)
+    {
+        session()->flash('status', 'Logged out successfuly.');
+    }
+    
     public function __construct()
     {
         $this->middleware('guest')->except('logout');

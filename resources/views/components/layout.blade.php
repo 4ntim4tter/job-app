@@ -10,6 +10,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="JobSite" name="keywords">
     <meta content="Find jobs" name="description">
+    <title>{{ $title }} | JOBSITE</title>
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">

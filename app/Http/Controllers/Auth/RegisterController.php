@@ -64,6 +64,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        session()->flash('status', 'Registered Successfuly.');
         return Company::create([
             'name' => $data['name'],
             'email' => $data['email'],
