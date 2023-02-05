@@ -1,9 +1,9 @@
 @foreach($jobs as $job)
 <div class="position-relative" style="height: 150px;">
     {{-- <img class="img-fluid w-100 h-100" src="img/news-300x300-5.jpg" style="object-fit: cover;"> --}}
-    <a class="overlay" href="{{ $job->jobRoute() }}">
+    <a class="overlay" href="{{ route('jobs.show', $job) }}">
         <div>
-            <p class="text-white" style="font-size: 25px; display: inline;">{{ $companies[$job->company_id]->name }}</p>
+            <p class="text-white" style="font-size: 25px; display: inline;">{{ $companies[$job->company_id-1]->name }}</p>
             <p class="text-white" style="font-size: 25px; display: inline;">|</p>
             <p class="text-white" style="font-size: 12px; display: inline;"> Job category: {{ $job->category }}</p>
             <p class="text-white" style="font-size: 18px;">{{ $job->name }}</p>

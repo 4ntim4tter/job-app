@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\cv;
 use Illuminate\Http\Request;
 use App\Models\JobApplication;
+use App\Models\Jobs;
 
 class JobApplicationController extends Controller
 {
@@ -19,5 +20,11 @@ class JobApplicationController extends Controller
         $jobApplication->save();
 
         return redirect()->route('jobs.home')->with('status', 'Applied successfuly.');
+    }
+
+    public function showApplications(Request $request, JobApplication $jobApp, Jobs $job)
+    {
+        $jobApp = $jobApp->where('jobs_id', $request->query('job'))->get();
+        return view('components.job-details', compact('jobApp'));
     }
 }

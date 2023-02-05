@@ -19,7 +19,7 @@ class CompanyFactory extends Factory
         return [
             'name' => fake()->company(),
             'email' => fake()->email(),
-            'password' => fake()->password(8, 11)
+            'password' => fake()->password(8, 15)
         ];
     }
 }

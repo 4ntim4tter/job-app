@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Company;
+use App\Models\JobApplication;
 use App\Models\Jobs;
 use Illuminate\Database\Seeder;
 
@@ -17,6 +18,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Company::factory(10)->has(Jobs::factory(5))->create();
+        Company::factory(2)->has(Jobs::factory(2)->has(JobApplication::factory(2)))->create();
     }
 }
