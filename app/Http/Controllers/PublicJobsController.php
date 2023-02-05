@@ -19,7 +19,7 @@ class PublicJobsController extends Controller
     {
         $jobs = Jobs::latest()->paginate(5);
         $companies = Company::all();
-        Auth::loginUsingId(1);
+        // Auth::loginUsingId(1);
         return view('welcome', compact('jobs', 'companies'));
     }
 }
