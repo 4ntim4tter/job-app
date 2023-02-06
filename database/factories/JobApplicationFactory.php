@@ -17,7 +17,7 @@ class JobApplicationFactory extends Factory
     public function definition()
     {
         return [
-            'name' => fake()->word(),
+            'name' => fake()->name(),
             'email' => fake()->email(), 
             'qualifications' => fake()->sentence(), 
             'filename' => fake()->url(),

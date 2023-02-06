@@ -8,6 +8,7 @@ use App\Models\Company;
 use App\Models\JobApplication;
 use App\Models\Jobs;
 use Illuminate\Database\Seeder;
+use PhpParser\Node\Stmt\For_;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,6 +19,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Company::factory(2)->has(Jobs::factory(2)->has(JobApplication::factory(2)))->create();
+        for ($start = 0; $start <= random_int(2, 6); $start++) {
+            Company::factory()->has(Jobs::factory(random_int(2,7))->has(JobApplication::factory(random_int(1,8))))->create();
+        }
     }
 }

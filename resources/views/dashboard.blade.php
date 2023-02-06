@@ -23,13 +23,6 @@
                                 <p class="h6 m-0 py-1" style="height: 65%; overflow-y: scroll;" href="">{{ $job->description }}
                                     {{ $job->description }}
                                     {{ $job->description }}
-                                    {{ $job->description }}
-                                    {{ $job->description }}
-                                    {{ $job->description }}
-                                    {{ $job->description }}
-                                    {{ $job->description }}
-                                    {{ $job->description }}
-                                    {{ $job->description }}
                                 </p>
                                 <div class="" style="scale: 0.8; position: absolute; bottom:0; right: 0;">
                                     <a class="btn btn-primary font-weight-semi-bold ml-1"
@@ -41,6 +34,7 @@
                             </div>
                         </div>
                     @endforeach
+                    {{ $jobs->links() }}
                 </div>
                 <div class="py-4 px-4 mb-3" style="display: inline; flex: 1; height:100vh">
                     <div class="bg-light py-2 px-4 mb-3">
@@ -49,7 +43,6 @@
                     <iframe name="jobFrame" frameborder="0" class=""
                     style="flex: 1; padding-top: 2%; width:100%; height: 100%"></iframe>
                 </div>
-
             </div>
         </div>
     </div>

@@ -7,9 +7,13 @@
                 <h4 class="m-1">{{ $application->name }}</h4>
             </div>
             <div class="bg-light py-2 px-4 mb-3">
-                <b>Job description:</b>
+                <b> Email:</b>
+                <h5>{{ $application->email}}</h5>
                 <p></p>
-                <b>Job requirements:</b>
+                <b> Qualifications:</b>
+                <p> {{ $application->qualifications }}</p>
+                <p></p>
+                <p>CV: {{ $application->filename }}</p>
                 <p></p>
             </div>
         </div>
