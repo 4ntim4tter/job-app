@@ -39,18 +39,30 @@ class JobController extends Controller
 
     public function filter(Request $request)
     {
-        $jobs = Jobs::with('company')->latest();
         $filter = strtolower($request->query('search'));
+        
+        $filteredCompanies = Company::latest()->where('name', 'regexp', $filter)->get();
+
+        if ($filteredCompanies->first() !== null) {
+            $filteredCompanies = $filteredCompanies->first()->id;
+        } else {
+            $filteredCompanies = 0;
+        }
+        // dd($filteredCompanies->first()->id);
+        // dd(Jobs::with([
+        //     'company' => function ($query) {
+        //         $query->select('name');
+        // }])->get());
 
         if(!$filter){
-            $jobs->paginate(5);
+            $jobs = Jobs::latest()->paginate(5);
             return view('welcome', compact('jobs'));
         } else {
-            $jobs = Jobs::with('company')->latest()
-                ->where('name', $filter)
+            $jobs = Jobs::latest()
+                ->where('company_id', $filteredCompanies)
+                ->orWhere('name', $filter)
                 ->orWhere('category', $filter)
                 ->orWhere('description', $filter)
-                ->orWhere($jobs->company()->name, $filter)
                 ->paginate(5);
             return view('welcome', compact('jobs'));
         }
