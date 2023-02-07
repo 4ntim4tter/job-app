@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', PublicJobsController::class)->name('jobs.home');
 Route::get('/job/{job}', [ShowJobController::class, 'showJob'])->name('jobs.show');
 Route::post('/job', [JobApplicationController::class, 'apply'])->name('jobs.apply');
+Route::get('/job', [JobController::class, 'filter'])->name('jobs.filter');
 Route::get('/dashboard', [CompanyController::class, 'index'])->name('jobs.dashboard')->middleware(['auth']);
 Route::get('/dashboard/applications', [JobApplicationController::class, 'showApplications'])->name('jobs.applications')->middleware(['auth']);
 Route::get('/dashboard/job/create', [JobController::class, 'create'])->name('jobs.create')->middleware(['auth']);

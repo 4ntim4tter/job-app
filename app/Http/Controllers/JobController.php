@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Jobs;
+use App\Models\Company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -34,5 +35,25 @@ class JobController extends Controller
         // dd($request->job);
         $job->where('id', $request->job)->delete(); //->deleteOrFail();
         return redirect()->route('jobs.dashboard')->with('status', 'Job deleted successfuly.');
+    }
+
+    public function filter(Request $request)
+    {
+        $jobs = Jobs::with('company')->latest();
+        $filter = strtolower($request->query('search'));
+
+        if(!$filter){
+            $jobs->paginate(5);
+            return view('welcome', compact('jobs'));
+        } else {
+            $jobs = Jobs::with('company')->latest()
+                ->where('name', $filter)
+                ->orWhere('category', $filter)
+                ->orWhere('description', $filter)
+                ->orWhere($jobs->company()->name, $filter)
+                ->paginate(5);
+            return view('welcome', compact('jobs'));
+        }
+
     }
 }
