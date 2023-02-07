@@ -49,9 +49,9 @@
                         </div>
                     @endforeach
                 </div>
-                <div class="py-4 px-4 mb-3" style="display: inline; flex: 1; height:100vh">
-                    <div class="bg-light py-2 px-4 mb-3">
-                        <h3 class="m-0">Your Jobs</h3>
+                <div class="py-4 px-4 mb-3 " style="display: inline; flex: 1; height:100vh;">
+                    <div class="bg-light py-2 px-4 mb-3" style="margin-left: 6%">
+                        <h3 class="m-0">Selected Job Applications</h3>
                     </div>
                     <iframe name="jobFrame" frameborder="0" class=""
                         style="flex: 1; padding-top: 2%; width:100%; height: 100%"></iframe>

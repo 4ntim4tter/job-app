@@ -17,7 +17,7 @@ class CompanyController extends Controller
     public function index(Request $request, Jobs $jobs)
     {
         $user_id = Auth::user()->id;
-        $jobs = Jobs::where('company_id', $user_id)->latest()->paginate(4);
+        $jobs = Jobs::where('company_id', $user_id)->latest()->paginate(3);
         return view('dashboard', compact('jobs'));
     }
 }
