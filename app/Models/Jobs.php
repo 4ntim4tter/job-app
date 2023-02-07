@@ -22,4 +22,10 @@ class Jobs extends Model
     {
         return $this->hasMany(JobApplication::class);
     }
+
+    public function remove()
+    {
+        return route('jobs.delete', $this->id);
+    }
+
 }

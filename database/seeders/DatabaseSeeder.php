@@ -8,7 +8,6 @@ use App\Models\Company;
 use App\Models\JobApplication;
 use App\Models\Jobs;
 use Illuminate\Database\Seeder;
-use PhpParser\Node\Stmt\For_;
 
 class DatabaseSeeder extends Seeder
 {
