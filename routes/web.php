@@ -31,6 +31,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [CompanyController::class, 'index'])->name('jobs.dashboard');
     Route::get('/dashboard/applications', [JobApplicationController::class, 'showApplications'])->name('jobs.applications');
     Route::get('/dashboard/job/create', [JobController::class, 'create'])->name('jobs.create');
+    Route::get('/dashboard/edit', [JobController::class, 'edit'])->name('jobs.edit');
     Route::post('/dashboard/job/store', [JobController::class, 'store'])->name('jobs.store');
     Route::delete('/dashboard/delete', [JobController::class, 'delete'])->name('jobs.delete');
     Route::fallback(

@@ -37,6 +37,11 @@ class JobController extends Controller
         return redirect()->route('jobs.dashboard')->with('status', 'Job deleted successfuly.');
     }
 
+    public function edit(Request $request)
+    {
+        return view('components.edit');
+    }
+
     public function filter(Request $request)
     {
         $filter = strtolower($request->query('search'));
