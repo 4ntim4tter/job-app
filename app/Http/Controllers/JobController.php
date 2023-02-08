@@ -40,13 +40,12 @@ class JobController extends Controller
     public function filter(Request $request)
     {
         $filter = strtolower($request->query('search'));
-        
         $filteredCompanies = Company::latest()->where('name', 'regexp', $filter)->get();
 
         if ($filteredCompanies->first() !== null) {
             $filteredCompanies = $filteredCompanies->first()->id;
         } else {
-            $filteredCompanies = 0;
+            $filteredCompanies = -1;
         }
         // dd($filteredCompanies->first()->id);
         // dd(Jobs::with([
@@ -54,17 +53,23 @@ class JobController extends Controller
         //         $query->select('name');
         // }])->get());
 
-        if(!$filter){
+        if(!$filter and $filteredCompanies === -1){
             $jobs = Jobs::latest()->paginate(5);
             return view('welcome', compact('jobs'));
         } else {
             $jobs = Jobs::latest()
                 ->where('company_id', $filteredCompanies)
-                ->orWhere('name', $filter)
-                ->orWhere('category', $filter)
-                ->orWhere('description', $filter)
+                ->orWhere('name', 'regexp', $filter)
+                ->orWhere('category', 'regexp', $filter)
+                ->orWhere('description', 'regexp', $filter)
                 ->paginate(5);
-            return view('welcome', compact('jobs'));
+
+            if ($filteredCompanies === -1) {
+                return view('welcome', compact('jobs', 'filter'));
+            } else {
+                $filter = $filteredCompanies;
+                return view('welcome', compact('jobs', 'filter'));
+            }
         }
 
     }

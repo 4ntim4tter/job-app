@@ -15,7 +15,8 @@
                             <div class="ml-auto">
                                 <input type="text" name="search" id="search-input"
                                     placeholder="Keyword"
-                                    style="display: inline; height: 37px">
+                                    style="display: inline; height: 37px"
+                                    value={{ old('filter') }}>
                                 <div class="input-group-append" style="display:inline">
                                     <button class="input-group-text" style="display:inline" type="submit"><i
                                             class="fa fa-search" style="display: inline"></i></button>

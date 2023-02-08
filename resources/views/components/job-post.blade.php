@@ -17,4 +17,4 @@
 <div style="padding:1px"></div>
 @endforeach
 
-{{ $jobs->links() }}
+{{ $jobs->appends(request()->query())->links() }}
