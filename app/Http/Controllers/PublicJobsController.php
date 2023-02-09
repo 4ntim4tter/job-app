@@ -16,7 +16,7 @@ class PublicJobsController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $jobs = Jobs::latest()->paginate(5);
+        $jobs = Jobs::latest()->where('published', 1)->paginate(5);
         $companies = Company::all();
         return view('welcome', compact('jobs', 'companies'));
     }

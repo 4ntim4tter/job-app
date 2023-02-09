@@ -10,9 +10,9 @@ use Illuminate\Support\Facades\Auth;
 
 class CompanyController extends Controller
 {
-    public function construct()
+    public function __construct()
     {
-        $this->middleware(['auth']);
+        $this->middleware(['auth', 'verified']);
     }
     public function index(Request $request, Jobs $jobs)
     {

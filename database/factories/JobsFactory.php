@@ -18,9 +18,11 @@ class JobsFactory extends Factory
     {
         return [
             'name' => fake()->word(),
-            'category' => fake()->word(), 
-            'description' => fake()->sentence(), 
+            'category' => fake()->word(),
+            'description' => fake()->sentence(),
             'requirements' => fake()->paragraph(),
+            'published' => 1,//random_int(0,1),
+            'open' => random_int(0,1)
         ];
     }
 }

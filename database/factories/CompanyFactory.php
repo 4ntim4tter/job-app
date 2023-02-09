@@ -21,6 +21,7 @@ class CompanyFactory extends Factory
             'name' => fake()->company(),
             'email' => fake()->email(),
             'password' => Hash::make('passwordofmine'),
+            'email_verified_at' => now()
         ];
     }
 }

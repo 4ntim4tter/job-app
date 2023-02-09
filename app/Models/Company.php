@@ -17,7 +17,8 @@ class Company extends Authenticable implements MustVerifyEmail
     protected $fillable = [
         'name',
         'email',
-        'password'
+        'password',
+        'email_verified_at'
     ];
 
     protected $hidden = [
