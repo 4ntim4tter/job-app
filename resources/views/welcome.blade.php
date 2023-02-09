@@ -16,7 +16,7 @@
                                 <input type="text" name="search" id="search-input"
                                     placeholder="Keyword"
                                     style="display: inline; height: 37px"
-                                    value={{ old('filter') }}>
+                                    value={{ request()->query('search') }}>
                                 <div class="input-group-append" style="display:inline">
                                     <button class="input-group-text" style="display:inline" type="submit"><i
                                             class="fa fa-search" style="display: inline"></i></button>
