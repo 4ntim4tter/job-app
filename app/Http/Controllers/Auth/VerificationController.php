@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\VerifiesEmails;
-use Illuminate\Support\Facades\Request;
 
 class VerificationController extends Controller
 {
@@ -34,6 +33,10 @@ class VerificationController extends Controller
      *
      * @return void
      */
+    protected function verified()
+    {
+        session()->flash('status', 'Email verified successfuly.');
+    }
     public function __construct()
     {
         $this->middleware('auth');

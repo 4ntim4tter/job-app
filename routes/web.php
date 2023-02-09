@@ -6,6 +6,7 @@ use App\Http\Controllers\PublicJobsController;
 use App\Http\Controllers\ShowJobController;
 use App\Http\Controllers\JobApplicationController;
 use App\Http\Controllers\JobFilterController;
+use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -24,14 +25,15 @@ Route::get('/job/{job}', [ShowJobController::class, 'showJob'])->name('jobs.show
 Route::post('/job', [JobApplicationController::class, 'apply'])->name('jobs.apply');
 Route::get('/job', [JobFilterController::class, 'filter'])->name('jobs.filter');
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/email/verify', function () {return view('auth.verify');})->name('verification.notice');
+    Route::get('/email/verify', function () {
+        return view('auth.verify-email');
+    })->name('verification.notice');
     Route::get('/dashboard', [CompanyController::class, 'index'])->name('jobs.dashboard');
     Route::get('/dashboard/applications', [JobApplicationController::class, 'showApplications'])->name('jobs.applications');
     Route::get('/dashboard/job/create', [JobController::class, 'create'])->name('jobs.create');
     Route::get('/dashboard/edit', [JobController::class, 'edit'])->name('jobs.edit');
     Route::post('/dashboard/job/store', [JobController::class, 'store'])->name('jobs.store');
     Route::delete('/dashboard/delete', [JobController::class, 'delete'])->name('jobs.delete');
-
 });
 Route::fallback(
     function () {
