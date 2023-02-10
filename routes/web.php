@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', PublicJobsController::class)->name('jobs.home');
+Route::get('/', PublicJobsController::class)->name('jobs.home')->middleware(['open_modify']);
 Route::get('/job/{job}', [ShowJobController::class, 'showJob'])->name('jobs.show')->middleware(['open_job']);
 Route::post('/job', [JobApplicationController::class, 'apply'])->name('jobs.apply');
 Route::get('/job', [JobFilterController::class, 'filter'])->name('jobs.filter');

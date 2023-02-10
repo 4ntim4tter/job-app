@@ -3,9 +3,10 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use App\Models\Jobs;
 use Illuminate\Http\Request;
 
-class CheckIfOpen
+class ModifyModelStatus
 {
     /**
      * Handle an incoming request.
@@ -16,8 +17,15 @@ class CheckIfOpen
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!$request->job->open) {
-            return redirect()->back()->with('status', 'This job post is closed.');
+        $jobs = Jobs::latest()->get();
+        foreach ($jobs as $job) {
+            if ($job->daysOpen() > 0) {
+                $job->open = true;
+                $job->save();
+            } else {
+                $job->open = false;
+                $job->save();
+            }
         }
         return $next($request);
     }
