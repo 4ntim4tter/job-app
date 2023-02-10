@@ -10858,3 +10858,11 @@ h6,
     color: white;
     background: red;
 }
+
+.enddate{
+    display: none;
+}
+
+.open:checked + .enddate {
+    display: inline;
+}

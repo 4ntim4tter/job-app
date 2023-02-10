@@ -1,5 +1,4 @@
-<x-layout>
-    <x-layout title="Job" />
+<x-layout title="Create Job Post">
     <div>
         <div class="container-fluid py-3">
             <div class="container">
@@ -39,15 +38,15 @@
                                         data-validation-required-message="Please enter your requirements"></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
-                                <label for="publish">Publish</label>
-                                <input type="checkbox" name="publish" id="publish">
-                                <label for="open">Open</label>
-                                <input type="checkbox" name="open" id="open">
-                                @if([)])fix this
-                                <input type="datetime" name="enddate" id="enddate">
-                                @endif
                                 <button class="btn btn-primary font-weight-semi-bold px-4" style="height: 50px;"
                                     type="submit" id="sendMessageButton">Add</button>
+                                <div class="ml-4" style="display: inline;">
+                                    <label for="publish">Publish</label>
+                                    <input class="publish" type="checkbox" name="publish" id="publish" checked>
+                                    <label for="open">Open</label>
+                                    <input class="open" type="checkbox" name="open" id="open" checked>
+                                    <input class="enddate" type="date" name="enddate" id="enddate">
+                                </div>
                                 <a class="btn btn-primary font-weight-semi-bold px-4"
                                     style="height: 50px; line-height: 35px; float:right;" id="goBackButton"
                                     href="{{ route('jobs.dashboard') }}">
@@ -61,5 +60,4 @@
         </div>
     </div>
     </div>
-
 </x-layout>
