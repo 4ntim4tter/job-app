@@ -9,7 +9,7 @@
                 @if (!$job->open)
                 <p class="text-white" style="font-size: 25px; display:inline; float: right;">Closed</p>
                 @else
-                <p class="text-white" style="font-size: 25px; display:inline; float: right;">{{ $job->daysOpen() }}</p>
+                <p class="text-white" style="font-size: 25px; display:inline; float: right;">Open for {{ $job->daysOpen() }} days</p>
                 @endif
                 <p class="text-white" style="font-size: 18px;">{{ $job->name }}</p>
             </div>

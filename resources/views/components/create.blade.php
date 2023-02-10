@@ -39,6 +39,13 @@
                                         data-validation-required-message="Please enter your requirements"></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
+                                <label for="publish">Publish</label>
+                                <input type="checkbox" name="publish" id="publish">
+                                <label for="open">Open</label>
+                                <input type="checkbox" name="open" id="open">
+                                @if([)])fix this
+                                <input type="datetime" name="enddate" id="enddate">
+                                @endif
                                 <button class="btn btn-primary font-weight-semi-bold px-4" style="height: 50px;"
                                     type="submit" id="sendMessageButton">Add</button>
                                 <a class="btn btn-primary font-weight-semi-bold px-4"
