@@ -20,7 +20,6 @@ class JobController extends Controller
 
     public function store(Request $request, Jobs $job)
     {
-        // dd($request->publish, $request->open);
         $job->name = $request->name;
         $job->category = $request->category;
         $job->description = $request->description;
@@ -45,8 +44,8 @@ class JobController extends Controller
         return redirect()->route('jobs.dashboard')->with('status', 'Job deleted successfuly.');
     }
 
-    public function edit(Request $request)
+    public function edit(Request $request, Jobs $job)
     {
-        return view('components.edit');
+        return view('components.edit', compact('job'));
     }
 }

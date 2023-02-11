@@ -38,6 +38,8 @@
                                     </div>
                                 </x-form>
                                 <div class="" style="scale: 0.8; position: absolute; bottom:0; right: 0;">
+                                    <a class="btn btn-primary font-weight-semi-bold"
+                                    href="{{ route('jobs.edit', ['job'=>$job]) }}">Edit</a>
                                     <a class="btn btn-primary font-weight-semi-bold ml-1"
                                         href="{{ route('jobs.applications', ['job' => $job->id]) }}" target="jobFrame"
                                         style="float: right;">Preview</a>
