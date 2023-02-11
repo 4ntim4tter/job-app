@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
- */
+ **/
 class JobsFactory extends Factory
 {
     /**
@@ -21,8 +21,9 @@ class JobsFactory extends Factory
             'category' => fake()->word(),
             'description' => fake()->sentence(),
             'requirements' => fake()->paragraph(),
-            'published' => 1,//random_int(0,1),
-            'open' => random_int(0,1)
+            'published' => random_int(0,1),
+            'open' => random_int(0,1),
+            'end_date' => fake()->date(),
         ];
     }
 }

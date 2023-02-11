@@ -20,11 +20,19 @@ class JobController extends Controller
 
     public function store(Request $request, Jobs $job)
     {
+        // dd($request->publish, $request->open);
         $job->name = $request->name;
         $job->category = $request->category;
         $job->description = $request->description;
         $job->requirements = $request->requirements;
         $job->company_id = Auth::user()->id;
+        $job->published = "$request->publish === 'on'"? 1 : 0;
+        $job->open = "$request->open === 'on'"? 1 : 0;
+
+        if($request->open){
+            $job->end_date = $request->enddate;
+        }
+
         $job->save();
 
         return redirect()->route('jobs.dashboard')->with('status', 'Job posted successfuly.');

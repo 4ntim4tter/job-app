@@ -13,7 +13,7 @@ class Jobs extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'category', 'description', 'requirements', 'published', 'open'];
+    protected $fillable = ['name', 'category', 'description', 'requirements', 'published', 'open', 'end_date'];
 
     public function company()
     {
@@ -33,9 +33,8 @@ class Jobs extends Model
     public function daysOpen()
     {
         $today = Carbon::parse(now());
-        $end_date = Carbon::parse($this->created_at)->addDays(30);
+        $end_date = Carbon::parse($this->end_date);
         $daysOpen = $today->diffInDays($end_date, false);
-
         return $daysOpen;
     }
 }
