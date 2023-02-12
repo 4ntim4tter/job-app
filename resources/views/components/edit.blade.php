@@ -9,7 +9,7 @@
                     <div class="col-md-12">
                         <div class="contact-form bg-light mb-3" style="padding: 30px;">
                             <div id="success"></div>
-                            <x-form name="sentMessage" id="jobForm" action="{{ route('jobs.store') }}" method="POST"
+                            <x-form name="sentMessage" id="jobForm" action="{{ route('jobs.store', ['id' => $job->id]) }}" method="POST"
                                 enctype="multipart/form-data">
                                 <div class="form-row">
                                     <div class="flex-grow-1">

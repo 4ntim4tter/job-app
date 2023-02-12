@@ -11,7 +11,7 @@
                 <div class="pb-3">
                     <div class="row py-2 px-4 mb-3" style="display:inline">
                         <div class="bg-light py-2 px-4 mb-3">
-                            <h3 class="m-0">Your Jobs</h3>
+                            <h3 class="m-0 overflow-hidden text-wrap"><u>{{ $jobs[0]->company->name }}</u></h3><h3 class="m-0">Posts:</h3>
                         </div>
                     </div>
                     {{ $jobs->links() }}
@@ -32,10 +32,18 @@
                                     {{ $job->description }}
                                 </p>
                                 <x-form action="{{ route('jobs.delete', ['job' => $job]) }}" method="DELETE">
-                                    <div class="" style="scale: 0.8; position: absolute; bottom:0; left: 0;">
+                                    <div class="" style="scale: 0.8; position: absolute; bottom:0; left: 0; padding-left: -10px;">
                                         <button class="btn btn-primary font-weight-semi-bold ml-1" type="submit"
                                             onclick="return confirm('Are you sure?')">Delete</button>
+                                            <label class="h6 m-0 py-1">
+                                                @if ($job->daysOpen() != 0) 
+                                                    This job is {{ $job->daysOpen() }} days open.
+                                                @else
+                                                    This job is closed.
+                                                @endif
+                                            </label>
                                     </div>
+                                    
                                 </x-form>
                                 <div class="" style="scale: 0.8; position: absolute; bottom:0; right: 0;">
                                     <a class="btn btn-primary font-weight-semi-bold"
@@ -50,6 +58,7 @@
                             </div>
                         </div>
                     @endforeach
+                    {{ $jobs->links() }}
                 </div>
                 <div class="py-4 px-4 mb-3 " style="display: inline; flex: 1; height:100vh;">
                     <div class="bg-light py-2 px-4 mb-3" style="margin-left: 6%">

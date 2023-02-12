@@ -23,7 +23,7 @@ class JobsFactory extends Factory
             'requirements' => fake()->paragraph(),
             'published' => random_int(0,1),
             'open' => random_int(0,1),
-            'end_date' => fake()->date(),
+            'end_date' => fake()->dateTimeInInterval('-2 days', '+10 days'),
         ];
     }
 }
