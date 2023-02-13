@@ -31,8 +31,7 @@ Route::get('/job', [JobFilterController::class, 'filter'])->name('jobs.filter');
 Route::get('/admin/login', [AdminLoginController::class, 'loginForm'])->name('admin.form');
 Route::post('/admin/login', [AdminLoginController::class, 'login'])->name('admin.auth');
 Route::post('/admin/logout', [AdminLoginController::class, 'logout'])->name('admin.logout');
-Route::group(['middleware' => 'admin'], function(){
-    Route::get('/admin/dasboard', [AdminController::class, 'index']);});
+Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dash')->middleware(['auth:admin']);
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/email/verify', function () {
