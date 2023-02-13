@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin;
 use App\Models\Company;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -65,7 +66,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         session()->flash('status', 'Registered Successfuly.');
-        return Company::create([
+        return Admin::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password'])

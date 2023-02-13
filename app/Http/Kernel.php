@@ -65,5 +65,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'open_job' => \App\Http\Middleware\CheckIfOpen::class,
         'open_modify' => \App\Http\Middleware\ModifyModelStatus::class,
+        'admin' => \App\Http\Middleware\RedirectIfNotAdmin::class,
     ];
 }

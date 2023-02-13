@@ -1,4 +1,4 @@
-<x-layout title="Company Login">
+<x-layout title="Admin Login">
     <x-top-bar />
     <div class="container" style="padding-top: 10%">
         <div class="row justify-content-center">
@@ -7,7 +7,7 @@
                     <div class="card-header">{{ __('Login') }}</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('login') }}">
+                        <form method="POST" action="{{ route('admin.auth') }}">
                             @csrf
                             <div class="row mb-3">
                                 <label for="email"

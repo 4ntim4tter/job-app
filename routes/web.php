@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Auth\AdminLoginController;
 use App\Http\Controllers\CompanyController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicJobsController;
@@ -24,6 +26,14 @@ Route::get('/', PublicJobsController::class)->name('jobs.home')->middleware(['op
 Route::get('/job/{job}', [ShowJobController::class, 'showJob'])->name('jobs.show')->middleware(['open_job']);
 Route::post('/job', [JobApplicationController::class, 'apply'])->name('jobs.apply');
 Route::get('/job', [JobFilterController::class, 'filter'])->name('jobs.filter');
+
+
+Route::get('/admin/login', [AdminLoginController::class, 'loginForm'])->name('admin.form');
+Route::post('/admin/login', [AdminLoginController::class, 'login'])->name('admin.auth');
+Route::post('/admin/logout', [AdminLoginController::class, 'logout'])->name('admin.logout');
+Route::group(['middleware' => 'admin'], function(){
+    Route::get('/admin/dasboard', [AdminController::class, 'index']);});
+
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/email/verify', function () {
         return view('auth.verify-email');

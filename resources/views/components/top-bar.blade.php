@@ -9,9 +9,11 @@
             </div>
             <div class="m-auto" style="padding-left: 5px; padding-right: 5px; height: 100%;">
                 <a href="{{ route('login') }}" class="nav-item nav-link topbarbutton "
-                    style="display: inline; height: 100%;">Login</a>
+                    style="display: inline; height: 100%;">Customer Login</a>
                 <a href="{{ route('register') }}" class="nav-item nav-link topbarbutton "
-                    style="display: inline; height: 100%;">Sign Up</a>
+                    style="display: inline; height: 100%;">Register</a>
+                <a href="{{ route('admin.form') }}" class="nav-item nav-link topbarbutton "
+                    style="display: inline; height: 100%;">Administrator</a>
             </div>
         </div>
     @endguest
