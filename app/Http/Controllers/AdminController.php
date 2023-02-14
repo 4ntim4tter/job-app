@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
 use App\Models\Jobs;
 use Illuminate\Http\Request;
 
@@ -12,9 +13,9 @@ class AdminController extends Controller
         $this->middleware('admin');
     }
 
-    public function index(Request $request, Jobs $jobs)
+    public function index(Request $request)
     {
-        $jobs = Jobs::latest()->paginate(3);
-        return view('auth.admin.dashboard', compact('jobs'));
+        $companies = Company::latest()->paginate(3);
+        return view('auth.admin.dashboard', compact('companies'));
     }
 }

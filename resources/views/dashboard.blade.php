@@ -36,14 +36,14 @@
                                         <button class="btn btn-primary font-weight-semi-bold ml-1" type="submit"
                                             onclick="return confirm('Are you sure?')">Delete</button>
                                             <label class="h6 m-0 py-1">
-                                                @if ($job->daysOpen() != 0) 
-                                                    This job is {{ $job->daysOpen() }} days open.
+                                                @if ($job->daysOpen() != 0)
+                                                    This job is open for {{ $job->daysOpen() }} days.
                                                 @else
                                                     This job is closed.
                                                 @endif
                                             </label>
                                     </div>
-                                    
+
                                 </x-form>
                                 <div class="" style="scale: 0.8; position: absolute; bottom:0; right: 0;">
                                     <a class="btn btn-primary font-weight-semi-bold"
