@@ -33,9 +33,9 @@ Route::post('/admin/login', [AdminLoginController::class, 'login'])->name('admin
 Route::post('/admin/logout', [AdminLoginController::class, 'logout'])->name('admin.logout');
 Route::middleware(['auth:admin'])->group(function(){
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dash');
-    Route::post('/admin/dashboard/delete', [AdminController::class, 'delete'])->name('admin.delete');
+    Route::delete('/admin/dashboard/delete', [AdminController::class, 'delete'])->name('admin.delete');
     Route::post('/admin/dashboard/edit/{company}', [AdminController::class, 'edit'])->name('admin.edit');
-    Route::post('/dashboard/job/store/{id?}', [AdminController::class, 'store'])->name('admin.store');
+    Route::post('admin/dashboard/store/{id}', [AdminController::class, 'store'])->name('admin.store');
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {
