@@ -9,16 +9,16 @@
         <div class="container" style="position: relative;">
             <div class="row" style="height: 100vh;">
                 <div class="pb-3">
-                    <div class="row py-2 px-4 mb-3" style="display:inline">
-                        <div class="bg-light py-2 px-4 mb-3">
-                            <h3 class="m-0 overflow-hidden text-wrap"><u>{{ $jobs[0]->company->name }}</u></h3><h3 class="m-0">Posts:</h3>
+                    <div class="row py-2 px-4 mb-3" style="display:inline;">
+                        <div class="bg-light py-2 px-4 mb-3" style="min-width: 450px">
+                            <h3 class="m-0 overflow-hidden text-wrap"><u>{{ $company->name }}</u></h3><h3 class="m-0">Posts:</h3>
                         </div>
                     </div>
                     {{ $jobs->links() }}
                     @foreach ($jobs as $index => $job)
                         <div class="d-flex mb-3">
                             <div class="w-100 d-flex flex-column bg-light px-3 overflow-auto"
-                                style="height: 200px; min-width: 500px; max-width:500px; position: relative">
+                                style="height: 200px; min-width: 450px; max-width:500px; position: relative">
                                 <div class="" style="font-size: 13px; padding-top: 2%">
                                     <a href="{{ route('jobs.applications', ['job' => $job->id]) }}"
                                         target="jobFrame">{{ $job->name }}</a>

@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticable;
 
@@ -23,9 +23,4 @@ class Admin extends Authenticable
         'password',
         'remember_token'
     ];
-
-    public function companies()
-    {
-        return $this->hasMany(Company::class);
-    }
 }

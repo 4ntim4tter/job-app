@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         for ($start = 0; $start <= random_int(2, 6); $start++) {
-            Company::factory()->has(Jobs::factory(random_int(2,7))->has(JobApplication::factory(random_int(1,8))))->create();
+            Company::factory()->has(Jobs::factory(random_int(2,7))->has(JobApplication::factory(random_int(2,6))))->create();
         }
     }
 }

@@ -53,8 +53,8 @@
                 style="display: inline; min-height: 100%;">Categories</a>
         </div>
         <div class="m-auto" style="padding-left: 5px; padding-right: 5px; height: 100%;">
-            <a href="{{ route('jobs.create') }}" class="nav-item nav-link topbarbutton "
-                style="display: inline; height: 100%;">Post Job</a>
+            <a href="{{ route('admin.create') }}" class="nav-item nav-link topbarbutton "
+                style="display: inline; height: 100%;">Add Company</a>
             <a href="{{ route('admin.dash') }}" class="nav-item nav-link topbarbutton "
                 style="display: inline; height: 100%;">Dashboard</a>
             <x-form action="{{ route('logout') }}" method="POST" style="display: inline; height: 100%;">

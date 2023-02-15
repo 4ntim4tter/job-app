@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Company;
-use App\Models\Jobs;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 
 class AdminController extends Controller
 {
@@ -25,12 +29,41 @@ class AdminController extends Controller
         $company->where('id', $request->company)->delete();
         return redirect()->route('admin.dash')->with('status', 'Company deleted successfuly');
     }
-    public function edit()
+    public function edit(Request $request, Company $company)
     {
-        return;
+        return view('auth.admin.edit', compact('company'));
     }
-    public function store()
+    public function store(Request $request, Company $company)
     {
-        return;
+        $company = $company->firstOrNew([
+            'id' => $request->id
+        ]);
+
+        $company->name = $request->name;
+        $company->email = $request->email;
+        $placeholder = Str::random(10);
+        if(!$company->password) {
+            $company->password = Hash::make($placeholder);
+            $admin = Auth::user();
+            Mail::raw('Hello your account is created, your new password is '. $placeholder, function ($message) use ($company, $admin, $placeholder) {
+                $message->from($admin->email, $admin->name)
+                ->to($company->email, $company->name)
+                ->subject('Password for your new account.');
+            });
+        }
+
+        $company->save();
+
+        return redirect()->route('admin.dash')->with('status', 'Company ' . $request->name . ' added successfuly.');
+    }
+
+    public function stats(Company $company)
+    {
+        return view('auth.admin.company-stats', compact('company'));
+    }
+
+    public function createCompanyForm()
+    {
+        return view('auth.admin.create-company');
     }
 }
