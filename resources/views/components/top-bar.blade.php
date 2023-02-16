@@ -6,8 +6,6 @@
         <div class="m-auto" style="padding-left: 5px; padding-right: 5px; min-height: 100%;">
             <a href="{{ route('jobs.home') }}" class="nav-item nav-link topbarbutton selected-button"
                 style="display: inline; height: 100%;">Home</a>
-            <a href="#" class="nav-item nav-link topbarbutton"
-                style="display: inline; min-height: 100%;">Categories</a>
         </div>
         <div class="m-auto" style="padding-left: 5px; padding-right: 5px; height: 100%;">
             <a href="{{ route('login') }}" class="nav-item nav-link topbarbutton "
@@ -27,8 +25,8 @@
         <div class="m-auto" style="padding-left: 5px; padding-right: 5px; min-height: 100%;">
             <a href="{{ route('jobs.home') }}" class="nav-item nav-link topbarbutton selected-button"
                 style="display: inline; height: 100%;">Home</a>
-            <a href="#" class="nav-item nav-link topbarbutton"
-                style="display: inline; min-height: 100%;">Categories</a>
+            <a href="{{ route('company.profile') }}" class="nav-item nav-link topbarbutton"
+                style="display: inline; min-height: 100%;">Profile</a>
         </div>
         <div class="m-auto" style="padding-left: 5px; padding-right: 5px; height: 100%;">
             <a href="{{ route('jobs.create') }}" class="nav-item nav-link topbarbutton "
@@ -50,7 +48,7 @@
             <a href="{{ route('jobs.home') }}" class="nav-item nav-link topbarbutton selected-button"
                 style="display: inline; height: 100%;">Home</a>
             <a href="#" class="nav-item nav-link topbarbutton"
-                style="display: inline; min-height: 100%;">Categories</a>
+                style="display: inline; min-height: 100%;">Profile</a>
         </div>
         <div class="m-auto" style="padding-left: 5px; padding-right: 5px; height: 100%;">
             <a href="{{ route('admin.create') }}" class="nav-item nav-link topbarbutton "

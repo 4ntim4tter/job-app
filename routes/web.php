@@ -50,6 +50,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard/applications', [JobApplicationController::class, 'showApplications'])->name('jobs.applications');
     Route::get('/dashboard/job/create', [JobController::class, 'create'])->name('jobs.create');
     Route::get('/dashboard/edit/{job}', [JobController::class, 'edit'])->name('jobs.edit');
+    Route::get('/profile', [CompanyController::class, 'profile'])->name('company.profile');
+    Route::post('/profile/edit', [CompanyController::class, 'store'])->name('company.store');
     Route::post('/dashboard/job/store/{id?}', [JobController::class, 'store'])->name('jobs.store');
     Route::delete('/dashboard/delete', [JobController::class, 'delete'])->name('jobs.delete');
 });

@@ -33,13 +33,13 @@
                                 </p>
                                 <x-form action="{{ route('jobs.delete', ['job' => $job]) }}" method="DELETE">
                                     <div class="" style="scale: 0.8; position: absolute; bottom:0; left: 0; padding-left: -10px;">
-                                        <button class="btn btn-primary font-weight-semi-bold ml-1" type="submit"
+                                        <button class="btn btn-primary font-weight-semi-bold" type="submit"
                                             onclick="return confirm('Are you sure?')">Delete</button>
-                                            <label class="h6 m-0 py-1">
-                                                @if ($job->daysOpen() != 0)
-                                                    This job is open for {{ $job->daysOpen() }} days.
+                                            <label class="h6 m-1 py-1 px-1">
+                                                @if ($job->daysOpen() > 0)
+                                                    This job post is open for {{ $job->daysOpen() }} days.
                                                 @else
-                                                    This job is closed.
+                                                    This job post is closed.
                                                 @endif
                                             </label>
                                     </div>
