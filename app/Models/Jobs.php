@@ -34,7 +34,7 @@ class Jobs extends Model
     {
         $today = Carbon::parse(now());
         $end_date = Carbon::parse($this->end_date);
-        $daysOpen = $today->diffInDays($end_date, false);
-        return $daysOpen;
+        $days_open = $today->diffInDays($end_date, false);
+        return $days_open;
     }
 }

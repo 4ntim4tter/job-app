@@ -9,15 +9,16 @@ use App\Models\Jobs;
 
 class JobApplicationController extends Controller
 {
-    public function apply(Request $request)
+    public function apply(Request $request, Jobs $job)
     {
+        $job = $job->find($request->query('job'));
         $cv = new cv;
         $jobApplication = new JobApplication;
         $jobApplication->name = $request->name;
         $jobApplication->email = $request->email;
         $jobApplication->qualifications = $request->qualifications;
-        $jobApplication->filename = $request->file->store($cv->directory($request->query('companyName')));
-        $jobApplication->jobs_id = $request->query('job');
+        $jobApplication->filename = $request->file->store($cv->directory($job->name));
+        $jobApplication->jobs_id = $job->id;
         $jobApplication->save();
 
         return redirect()->route('jobs.home')->with('status', 'Applied successfuly.');

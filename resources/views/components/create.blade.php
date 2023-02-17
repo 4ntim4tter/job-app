@@ -1,4 +1,5 @@
 <x-layout title="Create Job Post">
+    <x-top-bar/>
     <div>
         <div class="container-fluid py-3">
             <div class="container">

@@ -1,9 +1,25 @@
 <x-layout title="Edit Company">
+    <x-top-bar />
     <div>
         <div class="container-fluid py-3">
             <div class="container">
                 <div class="bg-light py-2 px-4 mb-3">
-                    <h4 class="m-1">Edit Company</h4>
+                    <h4 class="m-1">{{ $company->name }}</h4>
+                </div>
+                <div class="bg-light py-2 px-4 mb-3">
+                    <h4>Statistics:</h4>
+                    <p></p>
+                    <b>Job posts: {{ $company->jobs->count() }}</b>
+                    <p></p>
+                    <b>Open jobs: {{ $company->jobs->where('open', 1)->count() }}</b>
+                    <p></p>
+                    <b>Closed jobs: {{ $company->jobs->where('open', 0)->count() }}</b>
+                    <p></p>
+                    <b>All applications: {{ $company->allApplications() }}</b>
+                    <p></p>
+                </div>
+                <div class="bg-light py-2 px-4 mb-3">
+                    <h4 class="m-1">Edit Profile</h4>
                 </div>
                 <div class="row">
                     <div class="col-md-12">

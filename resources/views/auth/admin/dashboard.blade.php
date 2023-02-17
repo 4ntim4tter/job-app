@@ -1,12 +1,12 @@
 <x-layout title="Admin Dashboard">
     <x-top-bar />
     <div class="container-fluid py-4" style="height: 100vh;">
-        @if (session('status'))
-            <div class="alert alert-danger flex-grow-1" role="alert">
-                {{ session('status') }}
-            </div>
-        @endif
         <div class="container" style="position: relative;">
+            @if (session('status'))
+                <div class="alert alert-danger flex-grow-1" role="alert">
+                    {{ session('status') }}
+                </div>
+            @endif
             <div class="row">
                 <div>
                     <div class="row py-2 px-4 mb-3" style="display:inline">

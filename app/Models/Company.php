@@ -30,4 +30,13 @@ class Company extends Authenticable implements MustVerifyEmail
     {
         return $this->hasMany(Jobs::class);
     }
+
+    public function allApplications()
+    {
+        $all_applications = 0;
+        foreach($this->jobs as $job) {
+            $all_applications += $job->jobApplication->count();
+        }
+        return $all_applications;
+    }
 }

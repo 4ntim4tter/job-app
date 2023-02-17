@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout title="Admin Application">
     <x-top-bar />
     <div class="container" style="padding-top:10%;">
         <div class="row justify-content-center">

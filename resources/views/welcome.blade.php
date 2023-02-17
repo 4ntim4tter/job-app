@@ -1,7 +1,5 @@
     <x-layout title="Jobs">
-
-        <body>
-            <x-top-bar />
+        <x-top-bar />
             <div class="container-fluid py-3">
                 <div class="container">
                     @if (session('status'))
@@ -31,5 +29,4 @@
             </div>
             </div>
             <a href="#" class="btn btn-dark back-to-top"><i class="fa fa-angle-up"></i></a>
-        </body>
     </x-layout>

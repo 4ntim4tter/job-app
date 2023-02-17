@@ -4420,7 +4420,7 @@ input[type="button"].btn-block {
 }
 
 .nav-justified>.nav-link,
-.nav-justified .nav-item { 
+.nav-justified .nav-item {
     text-align: center;
 }
 
@@ -10752,7 +10752,7 @@ h6,
     -o-transition: all .2s ease-in;
     -webkit-transition: all .2s ease-in;
     transition: all .2s ease-in;
-    border-style: solid; 
+    border-style: solid;
     border-color: red;
 
 }
