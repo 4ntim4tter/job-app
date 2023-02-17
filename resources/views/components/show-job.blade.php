@@ -1,4 +1,6 @@
 <x-layout title="Job" />
+<x-top-bar />
+<p></p>
 <div>
     <div class="container-fluid py-3">
         <div class="container">
@@ -15,9 +17,8 @@
                 <div class="col-md-12">
                     <div class="contact-form bg-light mb-3" style="padding: 30px;">
                         <div id="success"></div>
-                        <x-form name="sentMessage" id="contactForm"
-                            action="{{ route('jobs.apply', ['job' => $job]) }}" method="POST"
-                            enctype="multipart/form-data">
+                        <x-form name="sentMessage" id="contactForm" action="{{ route('jobs.apply', ['job' => $job]) }}"
+                            method="POST" enctype="multipart/form-data">
                             <div class="form-row">
                                 <div class="col-md-6">
                                     <div class="control-group">

@@ -54,10 +54,10 @@
                                         href="{{ route('jobs.edit', ['job' => $job]) }}">Edit</a>
                                     <a class="btn btn-primary font-weight-semi-bold ml-1"
                                         href="{{ route('jobs.applications', ['job' => $job->id]) }}" target="jobFrame"
-                                        style="float: right;">Preview</a>
-                                    <a class="btn btn-primary font-weight-semi-bold ml-1"
+                                        style="float: right;" title="Ctrl + Left Click to open in new window.">View Applicants</a>
+                                    {{-- <a class="btn btn-primary font-weight-semi-bold ml-1"
                                         href="{{ route('jobs.applications', ['job' => $job->id]) }}"
-                                        style="float: right;">Go To</a>
+                                        style="float: right;">Go To</a> --}}
                                 </div>
                             </div>
                         </div>
