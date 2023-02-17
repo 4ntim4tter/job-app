@@ -66,5 +66,6 @@ class Kernel extends HttpKernel
         'open_job' => \App\Http\Middleware\CheckIfOpen::class,
         'open_modify' => \App\Http\Middleware\ModifyModelStatus::class,
         'admin' => \App\Http\Middleware\RedirectIfNotAdmin::class,
+        'active' => \App\Http\Middleware\AdminNotActive::class,
     ];
 }

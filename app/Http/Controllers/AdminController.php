@@ -66,4 +66,9 @@ class AdminController extends Controller
     {
         return view('auth.admin.create-company');
     }
+
+    public function inactive()
+    {
+        return view('auth.admin.inactive');
+    }
 }
