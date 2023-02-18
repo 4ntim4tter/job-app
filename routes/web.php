@@ -2,8 +2,8 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\AdminLoginController;
-use App\Http\Controllers\Auth\AdminRegistrationController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\CompanyApplicationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicJobsController;
 use App\Http\Controllers\ShowJobController;
@@ -27,6 +27,8 @@ Route::get('/', PublicJobsController::class)->name('jobs.home')->middleware(['op
 Route::get('/job/{job}', [ShowJobController::class, 'showJob'])->name('jobs.show')->middleware(['open_job']);
 Route::post('/job', [JobApplicationController::class, 'apply'])->name('jobs.apply');
 Route::get('/job', [JobFilterController::class, 'filter'])->name('jobs.filter');
+Route::get('/apply', [CompanyApplicationController::class, 'apply'])->name('companyApplication.apply');
+Route::post('/apply', [CompanyApplicationController::class, 'store'])->name('companyApplication.store');
 
 //Admin routes
 Route::get('/admin/login', [AdminLoginController::class, 'loginForm'])->name('admin.form');

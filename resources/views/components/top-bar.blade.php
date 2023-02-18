@@ -7,6 +7,9 @@
                 <a href="{{ route('jobs.home') }}"
                     class="nav-item nav-link topbarbutton @if (request()->routeIs('jobs.home')) selected-button @endif"
                     style="display: inline; height: 100%;">Home</a>
+                    <a href="{{ route('companyApplication.apply') }}"
+                    class="nav-item nav-link topbarbutton @if (request()->routeIs('companyApplication.apply')) selected-button @endif"
+                    style="display: inline; height: 100%;">Client Registration</a>
             </div>
             <div class="m-auto" style="padding-left: 5px; padding-right: 5px; height: 100%;">
                 <a href="{{ route('login') }}" class="nav-item nav-link topbarbutton @if (request()->routeIs('login')) selected-button @endif"

@@ -8,7 +8,7 @@
                         </div>
                     @endif
                     <div class="d-flex align-items-center justify-content-between py-2 px-4 mb-3">
-                        <h3 class="m-0">Apply Now</h3>
+                        <h3 class="m-0">Apply now:</h3>
                         <form action="{{ route('jobs.filter') }}">
                             <div class="ml-auto">
                                 <input type="text" name="search" id="search-input"

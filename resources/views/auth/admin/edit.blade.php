@@ -1,4 +1,5 @@
 <x-layout title="Edit Company">
+    <x-top-bar/>
     <div>
         <div class="container-fluid py-3">
             <div class="container">
