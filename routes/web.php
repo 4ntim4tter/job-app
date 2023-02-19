@@ -40,6 +40,7 @@ Route::middleware(['auth:admin', 'verified','active'])->group(function(){
     Route::get('/admin/dashboard/edit/{company}', [AdminController::class, 'edit'])->name('admin.edit');
     Route::get('/admin/dashboard/stats/{company}', [AdminController::class, 'stats'])->name('admin.stats');
     Route::get('/admin/dashboard/create', [AdminController::class, 'createCompanyForm'])->name('admin.create');
+    Route::get('/admin/requests', [AdminController::class, 'company_requests'])->name('admin.requests');
     Route::post('/admin/dashboard/store/{id?}', [AdminController::class, 'store'])->name('admin.store');
     Route::delete('/admin/dashboard/delete', [AdminController::class, 'delete'])->name('admin.delete');
 });

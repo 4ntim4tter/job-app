@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Company;
+use App\Models\CompanyApplication;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -70,5 +71,11 @@ class AdminController extends Controller
     public function inactive()
     {
         return view('auth.admin.inactive');
+    }
+
+    public function company_requests(CompanyApplication $comp_app)
+    {
+        $comp_app = $comp_app->all();
+        return view('auth.admin.requests', compact('comp_app'));
     }
 }
