@@ -13,7 +13,6 @@
                             <b> Email:</b> <button class="btn btn-primary font-weight-semi-bold float-right" style="display:inline;">Create</button>
                             <h5>{{ $app_request->email }}</h5>
                         </div>
-
                     </div>
                 </x-form>
             @endforeach
