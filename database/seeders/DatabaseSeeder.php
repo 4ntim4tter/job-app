@@ -4,7 +4,9 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Admin;
 use App\Models\Company;
+use App\Models\CompanyApplication;
 use App\Models\JobApplication;
 use App\Models\Jobs;
 use Illuminate\Database\Seeder;
@@ -21,5 +23,9 @@ class DatabaseSeeder extends Seeder
         for ($start = 0; $start <= random_int(2, 6); $start++) {
             Company::factory()->has(Jobs::factory(random_int(2,7))->has(JobApplication::factory(random_int(2,6))))->create();
         }
+
+        CompanyApplication::factory(10)->create();
+
+        Admin::factory(5)->create();
     }
 }

@@ -1,4 +1,5 @@
 <x-layout title="Create Company">
+    <x-top-bar/>
     <div>
         <div class="container-fluid py-3">
             <div class="container">
@@ -16,12 +17,12 @@
                                     <div class="flex-grow-1">
                                         <div class="control-group">
                                             <input type="text" class="form-control p-4" id="name" name="name"
-                                                placeholder="Name" required="required" value="{{ old('name') }}"
+                                                placeholder="Name" required="required" value="{{ $company->name }}"
                                                 data-validation-required-message="Please enter your name" />
                                             <p class="help-block text-danger"></p>
                                             <input type="text" class="form-control p-4" id="email"
                                                 name="email" placeholder="email" required="required"
-                                                value="{{ old('email') }}"
+                                                value="{{ $company->email }}"
                                                 data-validation-required-message="Please enter your email" />
                                             <p class="help-block text-danger"></p>
                                         </div>

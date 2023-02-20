@@ -34,8 +34,10 @@ class AdminController extends Controller
     {
         return view('auth.admin.edit', compact('company'));
     }
-    public function store(Request $request, Company $company)
+    public function store(Request $request, Company $company, CompanyApplication $comp_app)
     {
+        $request_email = $comp_app->where('email', $request->email)->get()[0]->email;
+
         $company = $company->firstOrNew([
             'id' => $request->id
         ]);
@@ -53,6 +55,10 @@ class AdminController extends Controller
             });
         }
 
+        if ($request->email === $request_email) {
+            $comp_app->where('email', $request->email)->delete();
+        }
+
         $company->save();
 
         return redirect()->route('admin.dash')->with('status', 'Company ' . $request->name . ' added successfuly.');
@@ -63,9 +69,9 @@ class AdminController extends Controller
         return view('auth.admin.company-stats', compact('company'));
     }
 
-    public function createCompanyForm()
+    public function createCompanyForm(Request $request, CompanyApplication $company)
     {
-        return view('auth.admin.create-company');
+        return view('auth.admin.create-company', compact('company'));
     }
 
     public function inactive()
