@@ -79,9 +79,15 @@ class AdminController extends Controller
         return view('auth.admin.inactive');
     }
 
-    public function company_requests(CompanyApplication $comp_app)
+    public function companyRequests(CompanyApplication $comp_app)
     {
         $comp_app = $comp_app->all();
         return view('auth.admin.requests', compact('comp_app'));
+    }
+
+    public function deleteRequest(Request $request, CompanyApplication $comp_app)
+    {
+        $comp_app->where('id', $request->company)->delete();
+        return redirect()->route('admin.requests')->with('status', 'Request deleted successfuly.');
     }
 }

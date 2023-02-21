@@ -20,7 +20,7 @@ class CompanyFactory extends Factory
         return [
             'name' => fake()->company(),
             'email' => fake()->email(),
-            'password' => Hash::make('passwordofmine'),
+            'password' => Hash::make('123123123'),
             'email_verified_at' => now()
         ];
     }

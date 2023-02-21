@@ -27,7 +27,12 @@
                                     <span>{{ $job->category }}</span>
                                     <span class="px-2">/</span>
                                     <span>Applications: {{ $job->jobApplication->count() }}</span>
-
+                                    <span class="px-2">/</span>
+                                    @if ($job->published)
+                                        <span>Published</span>
+                                    @else
+                                        <span>Unpublished</span>
+                                    @endif
                                 </div>
                                 <p class="h6 m-0 py-1" style="height: 65%; overflow-y: scroll;" href="">
                                     {{ $job->description }}
@@ -54,7 +59,8 @@
                                         href="{{ route('jobs.edit', ['job' => $job]) }}">Edit</a>
                                     <a class="btn btn-primary font-weight-semi-bold ml-1"
                                         href="{{ route('jobs.applications', ['job' => $job->id]) }}" target="jobFrame"
-                                        style="float: right;" title="Ctrl + Left Click to open in new window.">View Applicants</a>
+                                        style="float: right;" title="Ctrl + Left Click to open in new window.">View
+                                        Applicants</a>
                                     {{-- <a class="btn btn-primary font-weight-semi-bold ml-1"
                                         href="{{ route('jobs.applications', ['job' => $job->id]) }}"
                                         style="float: right;">Go To</a> --}}
