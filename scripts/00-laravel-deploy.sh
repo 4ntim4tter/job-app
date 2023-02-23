@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 echo "Running composer"
-composer update --no-scripts
 composer global require laravel/installer
-composer install --no-dev --working-dir=/var/www/html
+composer install
 
 echo "Caching config..."
 php artisan config:cache
