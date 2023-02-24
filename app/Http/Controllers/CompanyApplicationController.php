@@ -28,13 +28,13 @@ class CompanyApplicationController extends Controller
 
         $admins = $admins->all();
 
-        foreach($admins->all() as $admin) {
-            Mail::raw('You have received a registration request from ' . $comp_app->name . ' with email: ' . $comp_app->email, function ($message) use ($admin, $comp_app) {
-                $message->from($comp_app->email, $comp_app->name)
-                ->to($admin->email, $admin->name)
-                ->subject('Registration request.');
-            });
-        }
+        // foreach($admins->all() as $admin) {
+        //     Mail::raw('You have received a registration request from ' . $comp_app->name . ' with email: ' . $comp_app->email, function ($message) use ($admin, $comp_app) {
+        //         $message->from($comp_app->email, $comp_app->name)
+        //         ->to($admin->email, $admin->name)
+        //         ->subject('Registration request.');
+        //     });
+        // }
 
         return redirect()->route('jobs.home')->with('status', 'Thank you for your application. Your account will be created by the first admin available and your password will be sent to your e-mail.');
     }

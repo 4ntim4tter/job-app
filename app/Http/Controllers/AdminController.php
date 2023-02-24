@@ -48,15 +48,15 @@ class AdminController extends Controller
 
         $company->name = $request->name;
         $company->email = $request->email;
-        $placeholder = Str::random(10);
+        $placeholder = 'thisisapassword';//Str::random(10);
         if(!$company->password) {
             $company->password = Hash::make($placeholder);
-            $admin = Auth::user();
-            Mail::raw('Hello your account is created, your new password is '. $placeholder, function ($message) use ($company, $admin, $placeholder) {
-                $message->from($admin->email, $admin->name)
-                ->to($company->email, $company->name)
-                ->subject('Password for your new account.');
-            });
+            // $admin = Auth::user();
+            // Mail::raw('Hello your account is created, your new password is '. $placeholder, function ($message) use ($company, $admin, $placeholder) {
+            //     $message->from($admin->email, $admin->name)
+            //     ->to($company->email, $company->name)
+            //     ->subject('Password for your new account.');
+            // });
         }
 
         if ($request->email === $request_email and $request_email !== null) {
