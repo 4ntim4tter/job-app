@@ -12,4 +12,4 @@ php artisan optimize
 php artisan storage:link
 
 echo "Running migrations..."
-php artisan migrate
+php artisan migrate --force
