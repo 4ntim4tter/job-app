@@ -20,7 +20,7 @@ class AppServiceProvider extends ServiceProvider
 
     /**
      * Bootstrap any application services.
-     *
+     * @return UrlGenerator $url
      * @return void
      */
     public function boot(UrlGenerator $url)
