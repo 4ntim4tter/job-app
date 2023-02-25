@@ -10,7 +10,6 @@ class JobFilterController extends Controller
 {
     public function filter(Request $request)
     {
-
         $filter = strtolower($request->query('search'));
         $filteredCompanies = Company::latest()->where('name', 'LIKE', '%' . $$filter . '%')->get();
 
@@ -22,7 +21,7 @@ class JobFilterController extends Controller
 
         if (!$filter and $filteredCompanies === -1) {
             $jobs = Jobs::latest()->paginate(5);
-            return view('welcome', compact('jobs', 'filter'));
+            return view('welcome', compact('jobs'));
         } else {
             $jobs = Jobs::latest()
                 ->where('company_id', $filteredCompanies)
@@ -32,7 +31,7 @@ class JobFilterController extends Controller
                 ->paginate(5);
 
             if ($filteredCompanies === -1) {
-                return view('welcome', compact('jobs', 'filter'));
+                return view('welcome', compact('jobs'));
             } else {
                 $filter = $filteredCompanies;
                 return view('welcome', compact('jobs', 'filter'));
