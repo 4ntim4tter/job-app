@@ -35,7 +35,7 @@ Route::get('/admin/login', [AdminLoginController::class, 'loginForm'])->name('ad
 Route::post('/admin/login', [AdminLoginController::class, 'login'])->name('admin.auth');
 Route::post('/admin/logout', [AdminLoginController::class, 'logout'])->name('admin.logout');
 Route::get('/admin/inactive', [AdminController::class, 'inactive'])->name('admin.inactive');
-Route::middleware(['auth:admin', 'verified','active'])->group(function(){
+Route::middleware(['auth:admin','active'])->group(function(){
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dash');
     Route::get('/admin/dashboard/edit/{company}', [AdminController::class, 'edit'])->name('admin.edit');
     Route::get('/admin/dashboard/stats/{company}', [AdminController::class, 'stats'])->name('admin.stats');
@@ -47,7 +47,7 @@ Route::middleware(['auth:admin', 'verified','active'])->group(function(){
 });
 
 //Company routes
-Route::middleware(['auth', 'verified'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('/email/verify', function () {
         return view('auth.verify-email');
     })->name('verification.notice');
@@ -66,6 +66,6 @@ Route::fallback(
     }
 );
 
-Auth::routes(['verify' => true]);
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
