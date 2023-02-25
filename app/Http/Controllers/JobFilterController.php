@@ -22,7 +22,7 @@ class JobFilterController extends Controller
 
         if (!$filter and $filteredCompanies === -1) {
             $jobs = Jobs::latest()->paginate(5);
-            return view('welcome', compact('jobs'));
+            return view('welcome', compact('jobs', 'filter'));
         } else {
             $jobs = Jobs::latest()
                 ->where('company_id', $filteredCompanies)
