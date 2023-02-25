@@ -28,9 +28,9 @@ class JobFilterController extends Controller
             echo "here3";
             $jobs = Jobs::latest()
                 ->where('company_id', $filteredCompanies)
-                ->orWhere('name', 'regexp', $filter)
-                ->orWhere('category', 'regexp', $filter)
-                ->orWhere('description', 'regexp', $filter)
+                ->orWhere('name', 'like', $filter.'%')
+                ->orWhere('category', 'like', $filter.'%')
+                ->orWhere('description', 'like', $filter.'%')
                 ->paginate(5);
 
             if ($filteredCompanies === -1) {
