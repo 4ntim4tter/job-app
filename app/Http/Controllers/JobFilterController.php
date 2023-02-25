@@ -11,7 +11,8 @@ class JobFilterController extends Controller
     public function filter(Request $request)
     {
         $filter = strtolower($request->query('search'));
-        $filteredCompanies = Company::latest()->where('name', 'LIKE', $filter)->get();
+        echo $filter;
+        $filteredCompanies = Company::latest()->where('name', 'like', $filter.'%')->get();
 
         if ($filteredCompanies->first() !== null) {
             $filteredCompanies = $filteredCompanies->first()->id;
