@@ -20,7 +20,7 @@ class AdminNotActive
         if (Auth::user()->active === 0) {
             return redirect()->route('admin.inactive'); //->with('status', 'This job post is closed.');
         }
-        
+
         return $next($request);
     }
 }
