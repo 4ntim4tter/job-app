@@ -57,15 +57,6 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
-
-    protected function redirectTo()
-    {
-        if (Auth::user()->active === 0) {
-            return 'admin/inactive';
-        }
-        return '/';
-    }
-
     /**
      * Create a new user instance after a valid registration.
      *
