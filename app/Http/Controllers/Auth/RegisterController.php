@@ -7,6 +7,7 @@ use App\Models\Admin;
 use App\Models\Company;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -57,6 +58,14 @@ class RegisterController extends Controller
         ]);
     }
 
+    protected function redirectTo()
+    {
+        if (Auth::user()->active === 0) {
+            return 'admin/inactive';
+        }
+        return '/';
+    }
+
     /**
      * Create a new user instance after a valid registration.
      *
@@ -65,7 +74,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        session()->flash('status', 'Registered Successfuly.');
+
         return Admin::create([
             'name' => $data['name'],
             'email' => $data['email'],

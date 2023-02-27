@@ -36,12 +36,11 @@ class AdminController extends Controller
     }
     public function store(Request $request, Company $company, CompanyApplication $comp_app)
     {
-        if ($comp_app->first() !== null){
-            $request_email = $comp_app->where('email', $request->email)->get()[0]->email;
+        if ($comp_app->where('email', $request->email)->first() !== null){
+            $request_email = $comp_app->where('email', $request->email)->first()->email;
         } else {
             $request_email = null;
         }
-
 
         $company = $company->firstOrNew([
             'id' => $request->id
