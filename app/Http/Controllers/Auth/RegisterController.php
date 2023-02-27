@@ -73,4 +73,9 @@ class RegisterController extends Controller
             'active' => 0,
         ]);
     }
+
+    protected function guard()
+    {
+        return Auth::guard('admin');
+    }
 }
