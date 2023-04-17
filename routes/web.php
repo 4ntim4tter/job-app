@@ -31,10 +31,10 @@ Route::get('/apply', [CompanyApplicationController::class, 'apply'])->name('comp
 Route::post('/apply', [CompanyApplicationController::class, 'store'])->name('companyApplication.store');
 
 //Admin routes
-Route::get('/admin/login', [AdminLoginController::class, 'loginForm'])->name('admin.form');
-Route::post('/admin/login', [AdminLoginController::class, 'login'])->name('admin.auth');
+Route::get('/admin/login', [AdminLoginController::class, 'loginForm'])->name('admin.form')->middleware(['guest']);
+Route::post('/admin/login', [AdminLoginController::class, 'login'])->name('admin.auth')->middleware(['guest']);
 Route::post('/admin/logout', [AdminLoginController::class, 'logout'])->name('admin.logout');
-Route::get('/admin/inactive', [AdminController::class, 'inactive'])->name('admin.inactive');
+Route::get('/admin/inactive', [AdminController::class, 'inactive'])->name('admin.inactive')->middleware(['auth:admin']);
 Route::middleware(['auth:admin','active'])->group(function(){
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dash');
     Route::get('/admin/dashboard/edit/{company}', [AdminController::class, 'edit'])->name('admin.edit');
@@ -42,6 +42,7 @@ Route::middleware(['auth:admin','active'])->group(function(){
     Route::get('/admin/dashboard/create/{company?}', [AdminController::class, 'createCompanyForm'])->name('admin.create');
     Route::get('/admin/requests', [AdminController::class, 'companyRequests'])->name('admin.requests');
     Route::post('/admin/dashboard/store/{id?}', [AdminController::class, 'store'])->name('admin.store');
+    Route::post('/admin/logout', [AdminLoginController::class, 'logout'])->name('admin.logout');
     Route::delete('/admin/requests/delete/{company}', [AdminController::class, 'deleteRequest'])->name('admin.delete_request');
     Route::delete('/admin/dashboard/delete', [AdminController::class, 'delete'])->name('admin.delete');
 });

@@ -36,8 +36,8 @@ class AdminController extends Controller
     }
     public function store(Request $request, Company $company, CompanyApplication $comp_app)
     {
-        if ($comp_app->first() !== null){
-            $request_email = $comp_app->where('email', $request->email)->get()[0]->email;
+        if ($comp_app->where('email', $request->email)->first() !== null){
+            $request_email = $comp_app->where('email', $request->email)->first()->email;
         } else {
             $request_email = null;
         }
@@ -48,7 +48,7 @@ class AdminController extends Controller
 
         $company->name = $request->name;
         $company->email = $request->email;
-        $placeholder = 'thisisapassword';//Str::random(10);
+        $placeholder = "123123123";//Str::random(10);
         if(!$company->password) {
             $company->password = Hash::make($placeholder);
             // $admin = Auth::user();
