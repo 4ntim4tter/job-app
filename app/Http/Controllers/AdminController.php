@@ -48,7 +48,7 @@ class AdminController extends Controller
 
         $company->name = $request->name;
         $company->email = $request->email;
-        $placeholder = Str::random(10);
+        $placeholder = "123123123";//Str::random(10);
         if(!$company->password) {
             $company->password = Hash::make($placeholder);
             $admin = Auth::user();
