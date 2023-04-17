@@ -8,3 +8,4 @@ php artisan optimize
 
 echo "Running migrations..."
 php artisan migrate --force
+php artisan db:seed --force
