@@ -6,6 +6,11 @@ When an admin account is created it has to be approved by the site owner by acti
 Admins can see the company statistics and modify companies while clients can add new job posts and see applications.
 The database is seeded with dummy data for testing purposes and is using SQlite.
 
+The site needs a bit to load when running for the first time after idle time, please be patient and reload the site
+after a minute or two.
+
+https://jobbroker.onrender.com
+
 Test admin email: daren27@dibbert.com
 Test admin password: 123123123
 
