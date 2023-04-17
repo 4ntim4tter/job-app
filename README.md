@@ -4,6 +4,13 @@ Public job posts to which anyone can apply.
 Client accounts are created by sending a request to the site which all admins can see and create.
 When an admin account is created it has to be approved by the site owner by activating the account in the database.
 Admins can see the company statistics and modify companies while clients can add new job posts and see applications.
+The database is seeded with dummy data for testing purposes and is using SQlite.
+
+Test admin email: daren27@dibbert.com
+Test admin password: 123123123
+
+Test user email: isatterfield@yahoo.com
+Test user password: 123123123
 
 Front page:
 ![image](https://user-images.githubusercontent.com/25842618/222903781-ee662b8d-117e-452b-9d1c-894d391a359c.png)
