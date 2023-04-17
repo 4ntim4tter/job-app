@@ -4,11 +4,8 @@ composer global require laravel/installer
 composer install --no-dev --working-dir=/var/www/html
 
 echo "Caching config..."
-php artisan config:cache
-
-echo "Caching routes..."
-php artisan route:cache
+php artisan optimize
 
 echo "Running migrations..."
-php artisan migrate:fresh --force --seed
-php artisan key:generate
+php artisan migrate --force
+php artisan db:seed
