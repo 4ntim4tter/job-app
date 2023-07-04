@@ -10,9 +10,8 @@ class JobFilterController extends Controller
 {
     public function filter(Request $request)
     {
-
         $filter = strtolower($request->query('search'));
-        $filteredCompanies = Company::latest()->where('name', 'regexp', $filter)->get();
+        $filteredCompanies = Company::latest()->where('name', 'like', $filter.'%')->get();
 
         if ($filteredCompanies->first() !== null) {
             $filteredCompanies = $filteredCompanies->first()->id;
@@ -26,9 +25,9 @@ class JobFilterController extends Controller
         } else {
             $jobs = Jobs::latest()
                 ->where('company_id', $filteredCompanies)
-                ->orWhere('name', 'regexp', $filter)
-                ->orWhere('category', 'regexp', $filter)
-                ->orWhere('description', 'regexp', $filter)
+                ->orWhere('name', 'like', $filter.'%')
+                ->orWhere('category', 'like', $filter.'%')
+                ->orWhere('description', 'like', $filter.'%')
                 ->paginate(5);
 
             if ($filteredCompanies === -1) {
