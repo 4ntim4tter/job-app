@@ -11,10 +11,10 @@ after a minute or two.
 
 https://jobbroker.onrender.com
 
-Test admin email: clinton80@example.com
+Test admin email: eschmeler@yahoo.com
 Test admin password: 123123123
 
-Test user email: lily.carter@example.org
+Test user email: tad.johns@yahoo.com
 Test user password: 123123123
 
 Front page:
