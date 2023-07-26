@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="JobSite" name="keywords">
+    <meta content="Find jobs" name="description">
+    <title>Job | JOBSITE</title>
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="http://localhost/css/app.css" rel="stylesheet">
+</head>
+<body>
+    
+</body>
+</html>
+<div class="row bg-light flex-fill" style="height: 100%; align-items: stretch">
+            <h1 class="text-uppercase" style="display: inline; margin: auto;"><span class="text-primary">JOB</span>SITE
+            </h1>
+            <div class="m-auto" style="padding-left: 5px; padding-right: 5px; min-height: 100%;">
+                <a href="http://localhost"
+                    class="nav-item nav-link topbarbutton "
+                    style="display: inline; height: 100%;">Home</a>
+                    <a href="http://localhost/apply"
+                    class="nav-item nav-link topbarbutton "
+                    style="display: inline; height: 100%;">Client Registration</a>
+            </div>
+            <div class="m-auto" style="padding-left: 5px; padding-right: 5px; height: 100%;">
+                <a href="http://localhost/login" class="nav-item nav-link topbarbutton "
+                    style="display: inline; height: 100%;">Client Login</a>
+                <a href="http://localhost/admin/login" class="nav-item nav-link topbarbutton "
+                    style="display: inline; height: 100%;">Admin Login</a>
+                <a href="http://localhost/register" class="nav-item nav-link topbarbutton "
+                    style="display: inline; height: 100%;">Become an Admin</a>
+            </div>
+        </div>
+    <p></p>
+<div>
+    <div class="container-fluid py-3">
+        <div class="container">
+            <div class="bg-light py-2 px-4 mb-3">
+                <h4 class="m-1">Company Oberbrunner-Blick is looking for a nobis!</h4>
+            </div>
+            <div class="bg-light py-2 px-4 mb-3">
+                <b>Job description:</b>
+                <p>Quam sed dolor quibusdam ipsa.</p>
+                <b>Job requirements:</b>
+                <p>Et quam suscipit aspernatur modi nisi. Et sed earum ad veniam nisi officia. Inventore vitae laudantium ratione et delectus minima sapiente.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="contact-form bg-light mb-3" style="padding: 30px;">
+                        <div id="success"></div>
+                        <form action="http://localhost/job?job=24" method="POST" name="sentMessage" id="contactForm" enctype="multipart/form-data">
+    <input type="hidden" name="_token" value="BD5SygAzYpbZxnOLiMsiTgAKrUWyXQuDja033fhe">        <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="control-group">
+                                        <input type="text" class="form-control p-4" id="name" name="name"
+                                            placeholder="Full Name" required="required" value=""
+                                            data-validation-required-message="Please enter your name" />
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="control-group">
+                                        <input type="email" class="form-control p-4" id="email" name="email"
+                                            placeholder="Email" required="required" value=""
+                                            data-validation-required-message="Please enter your email" />
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <textarea class="form-control" rows="5" id="qualifications" name="qualifications" placeholder="Qualifications"
+                                    required="required" value=""
+                                    data-validation-required-message="Please enter your qualifications"></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div>
+                                <label for="cv">Please upload your CV:</label>
+                            </div>
+                            <input type="file" class="hidden" id="file" name="file" required="required"
+                                value="" data-validation-required-message="Please upload your CV" />
+                            <p class="help-block text-danger"></p>
+                            <div>
+                                <button class="btn btn-primary font-weight-semi-bold px-4" style="height: 50px;"
+                                    type="submit" id="sendMessageButton">Apply</button>
+                                <a class="btn btn-primary font-weight-semi-bold px-4"
+                                    style="height: 50px; line-height: 35px; float:right;" id="goBackButton"
+                                    href="http://localhost">
+                                    Cancel
+                                </a>
+                            </div>
+</form>                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="JobSite" name="keywords">
+    <meta content="Find jobs" name="description">
+    <title>Admin Application | JOBSITE</title>
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="http://localhost/css/app.css" rel="stylesheet">
+</head>
+<body>
+    <div class="row bg-light flex-fill" style="height: 100%; align-items: stretch">
+            <h1 class="text-uppercase" style="display: inline; margin: auto;"><span class="text-primary">JOB</span>SITE
+            </h1>
+            <div class="m-auto" style="padding-left: 5px; padding-right: 5px; min-height: 100%;">
+                <a href="http://localhost"
+                    class="nav-item nav-link topbarbutton "
+                    style="display: inline; height: 100%;">Home</a>
+                    <a href="http://localhost/apply"
+                    class="nav-item nav-link topbarbutton "
+                    style="display: inline; height: 100%;">Client Registration</a>
+            </div>
+            <div class="m-auto" style="padding-left: 5px; padding-right: 5px; height: 100%;">
+                <a href="http://localhost/login" class="nav-item nav-link topbarbutton "
+                    style="display: inline; height: 100%;">Client Login</a>
+                <a href="http://localhost/admin/login" class="nav-item nav-link topbarbutton "
+                    style="display: inline; height: 100%;">Admin Login</a>
+                <a href="http://localhost/register" class="nav-item nav-link topbarbutton  selected-button "
+                    style="display: inline; height: 100%;">Become an Admin</a>
+            </div>
+        </div>
+        <div class="container" style="padding-top:10%;">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Register</div>
+                    <div class="card-body">
+                        <form method="POST" action="http://localhost/register">
+                            <input type="hidden" name="_token" value="BD5SygAzYpbZxnOLiMsiTgAKrUWyXQuDja033fhe">                            <div class="row mb-3">
+                                <label for="name"
+                                    class="col-md-4 col-form-label text-md-end">Name</label>
+                                <div class="col-md-6">
+                                    <input id="name" type="text"
+                                        class="form-control " name="name"
+                                        value="" required autocomplete="name" autofocus>
+                                                                    </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="email"
+                                    class="col-md-4 col-form-label text-md-end">Email Address</label>
+
+                                <div class="col-md-6">
+                                    <input id="email" type="email"
+                                        class="form-control " name="email"
+                                        value="" required autocomplete="email">
+
+                                                                    </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="password"
+                                    class="col-md-4 col-form-label text-md-end">Password</label>
+
+                                <div class="col-md-6">
+                                    <input id="password" type="password"
+                                        class="form-control " name="password"
+                                        required autocomplete="new-password">
+
+                                                                    </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="password-confirm"
+                                    class="col-md-4 col-form-label text-md-end">Confirm Password</label>
+
+                                <div class="col-md-6">
+                                    <input id="password-confirm" type="password" class="form-control"
+                                        name="password_confirmation" required autocomplete="new-password">
+                                </div>
+                            </div>
+
+                            <div class="row mb-0">
+                                <div class="col-md-6 offset-md-4">
+                                    <button type="submit" class="btn btn-primary" style="min-height: 100%">
+                                        Register
+                                    </button>
+
+                                    <a class="btn btn-primary font-weight-semi-bold px-4"
+                                        style="height: 50px; line-height: 35px; float:right;"
+                                        href="http://localhost">
+                                        Cancel
+                                    </a>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
